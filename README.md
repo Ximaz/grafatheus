@@ -4,6 +4,7 @@ This project was made to make a clean and easy monitoring installation using Pro
 - ``curl`` : allows to make web requests,
 - ``gnupg2`` : deals with GNU GPG keys for packages,
 - ``software-properties-common`` : deals with apt external packages.
+
 There are some resources you amy want to read before starting to install these components :
 - [Prometheus](https://prometheus.io/),
 - [Node Exporter](https://prometheus.io/docs/guides/node-exporter/),
