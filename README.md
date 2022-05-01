@@ -5,6 +5,9 @@ This project was made to make a clean and easy monitoring installation. It requi
 - gnupg2 (deals with GNU GPG keys for packages),
 - software-properties-common (deals with apt external packages).
 
+# Specifications
+This project works fine for Linux ADM64 systems and was only tested by me on a Debian 11 machine. You may have some trouble. If it's the case, you may open an issue. I will try my best to make this project compatible as much as I can, but no warrenty.
+
 # Install dependencies (if not done yet)
 To easily install dependencies, there is a bash script called ``requirements.bash`` that will to the job for you. The only thing you have to do is to run the script in sudo mode.
 
@@ -19,4 +22,3 @@ The second thing is called Node Exporter. It's a component required to scrap the
 
 ### Grafana
 The last but not least is Grafana. As same as above, it must be able to open the port 3000. If it can't, you will not be able to reach the monitor.
-
