@@ -31,3 +31,19 @@ The second thing is called Node Exporter. It's a component required to scrap the
 
 ### Grafana
 The last but not least is Grafana. As same as above, it must be able to open the port 3000. If it can't, you will not be able to reach the monitor.
+
+### Copy-To-Install
+
+```bash
+# Clone the repository
+git clone https://github.com/Ximaz/grafatheus
+cd grafatheus
+
+# Changes permissions for non-admin users
+chmod -R go=r *.bash README.md
+chmod -R u+x *.bash
+
+# Start the setup process
+sudo ./requirements.bash
+sudo ./install.bash
+```
