@@ -40,8 +40,7 @@ git clone https://github.com/Ximaz/grafatheus
 cd grafatheus
 
 # Changes permissions for non-admin users
-chmod -R go=r *.bash README.md
-chmod -R u+x *.bash
+chmod -R og=r *.bash scripts/*.bash README.md
 
 # Start the setup process
 sudo ./requirements.bash
