@@ -1,12 +1,20 @@
 # Grafatheus (Grafana & Prometheus)
-This project was made to make a clean and easy monitoring installation. It requires a few packages that many server are delivered with :
-- ufw (manages the firewall),
-- curl (allows to make web requests),
-- gnupg2 (deals with GNU GPG keys for packages),
-- software-properties-common (deals with apt external packages).
+This project was made to make a clean and easy monitoring installation using Prometheus, Node Exporter and Grafana. It requires a few packages that many server are delivered with :
+- ``ufw`` : manages the firewall,
+- ``curl`` : allows to make web requests,
+- ``gnupg2`` : deals with GNU GPG keys for packages,
+- ``software-properties-common`` : deals with apt external packages.
+There are some resources you amy want to read before starting to install these components :
+- [Prometheus](https://prometheus.io/),
+- [Node Exporter](https://prometheus.io/docs/guides/node-exporter/),
+- [Grafana](https://grafana.com/).
 
 # Specifications
 This project works fine for Linux ADM64 systems and was only tested by me on a Debian 11 machine. You may have some trouble. If it's the case, you may open an issue. I will try my best to make this project compatible as much as I can, but no warrenty.
+In addition, those ports are meant to be opened :
+- ``9090`` : Prometheus,
+- ``9100`` : Node Exporter,
+- ``3000`` : Grafana.
 
 # Install dependencies (if not done yet)
 To easily install dependencies, there is a bash script called ``requirements.bash`` that will to the job for you. The only thing you have to do is to run the script in sudo mode.
