@@ -32,7 +32,7 @@ The second thing is called Node Exporter. It's a component required to scrap the
 ### Grafana
 The last but not least is Grafana. As same as above, it must be able to open the port 3000. If it can't, you will not be able to reach the monitor.
 
-### Copy-To-Install
+# Copy-To-Install
 
 ```bash
 # Clone the repository
