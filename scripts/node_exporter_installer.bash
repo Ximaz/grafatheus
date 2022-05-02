@@ -3,8 +3,8 @@
 if [[ ! -f "/tmp/node_exporter/archive.tar.gz" ]]; then
     echo "Downloading node_exporter ..."
     mkdir -p "/tmp/node_exporter/"
-
-    node_exporter_url=$(curl -s "https://api.github.com/repos/prometheus/node_exporter/releases/latest" | grep -oP "https://github.com/prometheus/node_exporter/releases/download/v.*/node_exporter-.*.linux-amd64.tar.gz")
+    arch=$(uname -r | cut -d "-" -f 3)
+    node_exporter_url=$(curl -s "https://api.github.com/repos/prometheus/node_exporter/releases/latest" | grep -oP "https://github.com/prometheus/node_exporter/releases/download/v.*/node_exporter-.*.linux-${arch}.tar.gz")
     curl -L -o "/tmp/node_exporter/archive.tar.gz" "${node_exporter_url}"
 fi
 

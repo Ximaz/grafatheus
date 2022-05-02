@@ -20,7 +20,8 @@ if [[ ! -d "/tmp/prometheus/" ]]; then
     echo "Downloading prometheus ..."
     mkdir -p "/tmp/prometheus/"
     cd "/tmp/prometheus/"
-    prometheus_url=$(curl -s "https://api.github.com/repos/prometheus/prometheus/releases/latest" | grep -oP "https://github.com/prometheus/prometheus/releases/download/v.*/prometheus-.*.linux-amd64.tar.gz")
+    arch=$(uname -r | cut -d "-" -f 3)
+    prometheus_url=$(curl -s "https://api.github.com/repos/prometheus/prometheus/releases/latest" | grep -oP "https://github.com/prometheus/prometheus/releases/download/v.*/prometheus-.*.linux-${arch}.tar.gz")
     curl -L -o archive.tar.gz "${prometheus_url}"
 
     echo "Extracting prometheus ..."
