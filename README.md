@@ -11,7 +11,7 @@ There are some resources you amy want to read before starting to install these c
 - [Grafana](https://grafana.com/).
 
 # Specifications
-This project works fine for Linux ADM64 systems and was only tested by me on a Debian 11 machine. You may have some trouble. If it's the case, you may open an issue. I will try my best to make this project compatible as much as I can, but no warrenty.
+This project works fine for Linux ADM64 systems and was only tested by me on a Debian 11 machine. You may have some trouble. If it's the case, you may open an issue.
 In addition, those ports are meant to be opened :
 - ``9090`` : Prometheus,
 - ``9100`` : Node Exporter,
