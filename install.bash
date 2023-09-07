@@ -1,10 +1,10 @@
 #!/bin/bash -e
 
+echo "Installing grafana ..."
+sudo ./scripts/grafana_installer.bash
+
 echo "Installing prometheus ..."
-./scripts/prometheus_installer.bash
+sudo ./scripts/prometheus_installer.bash
 
 echo "Installing node_exporter ..."
-./scripts/node_exporter_installer.bash
-
-echo "Installing grafana ..."
-./scripts/grafana_installer.bash
+sudo ./scripts/node_exporter_installer.bash

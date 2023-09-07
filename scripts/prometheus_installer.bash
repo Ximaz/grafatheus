@@ -20,8 +20,18 @@ if [[ ! -d "/tmp/prometheus/" ]]; then
     echo "Downloading prometheus ..."
     mkdir -p "/tmp/prometheus/"
     cd "/tmp/prometheus/"
-    arch=$(uname -r | cut -d "-" -f 3)
+    # WSL Instance support
+    if [[ ! $(uname -r | grep "microsoft-standard-WSL") == "" ]]; then
+        arch=$(uname -m)
+        if [[ "${arch}" == "x86_64" ]]; then
+          arch="amd64"
+        fi
+    else
+    # Old fashion way
+        arch=$(uname -r | cut -d "-" -f 3)
+    fi
     prometheus_url=$(curl -s "https://api.github.com/repos/prometheus/prometheus/releases/latest" | grep -oP "https://github.com/prometheus/prometheus/releases/download/v.*/prometheus-.*.linux-${arch}.tar.gz")
+    echo "Download URL : ${prometheus_url}"
     curl -L -o archive.tar.gz "${prometheus_url}"
 
     echo "Extracting prometheus ..."

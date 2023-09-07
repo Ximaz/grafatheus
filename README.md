@@ -15,7 +15,7 @@ This project works fine for Linux ADM64 systems and was only tested by me on a D
 In addition, those ports are meant to be opened :
 - ``9090`` : Prometheus,
 - ``9100`` : Node Exporter,
-- ``3000`` : Grafana.
+- ``3000`` : Grafana (default username:password => admin:admin , you'll be prompt to change it after).
 
 # Install dependencies (if not done yet)
 To easily install dependencies, there is a bash script called ``requirements.bash`` that will to the job for you. The only thing you have to do is to run the script in sudo mode.

@@ -1,10 +1,10 @@
 #!/bin/bash -e
 
 echo "Reloading daemon and stopping node_exporter ..."
-systemctl daemon-reload
+sudo systemctl daemon-reload
 if [[ -f "/usr/local/bin/node_exporter" ]]; then
-    systemctl stop node_exporter
-    systemctl disable node_exporter
+    sudo systemctl stop node_exporter
+    sudo systemctl disable node_exporter
 fi
 
 if [[ -f "/etc/prometheus/prometheus.yml" ]]; then
@@ -14,16 +14,17 @@ if [[ -f "/etc/prometheus/prometheus.yml" ]]; then
 fi
 
 echo "Removing node_exporter binary"
-rm -f "/usr/local/bin/node_exporter"
+sudo rm -rf "/usr/local/bin/node_exporter"
+sudo rm -rf "/tmp/node_exports"
 
 echo "Removing node_exporter systemd service unit ..."
-rm -f "/etc/systemd/system/node_exporter.service"
+sudo rm -rf "/etc/systemd/system/node_exporter.service"
 
 echo "Closing node_exporter default port : 9100 ..."
-ufw deny 9100
+sudo ufw deny 9100
 
 if [[ -f "/usr/local/bin/prometheus/" ]]; then
     echo "Restarting prometheus ..."
-    systemctl restart prometheus
+    sudo systemctl restart prometheus
 fi
 
